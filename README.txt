@@ -1,1 +1,1 @@
-onScreen is a test to investigate visualization of excel on raspberry
+onScreen is a test to investigate visualization of excel on raspberry pi
