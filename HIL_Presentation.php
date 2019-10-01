@@ -17,20 +17,30 @@ Version: 1.0
 <?php
 require_once "Classes/PHPExcel.php";
 
-		$tmpfname = "onScreen.xlsx"; #the file to read from, should be a relativ path
+		$tmpfname = "./../../../home/pi/repos/onScreen/onScreen.xlsx"; #the file to read from, should be a relativ path
 		$excelReader = PHPExcel_IOFactory::createReaderForFile($tmpfname);
 		$excelObj = $excelReader->load($tmpfname);
 		$worksheet = $excelObj->getSheet(0);
 		$lastRow = $worksheet->getHighestRow();
 		#print out the table
-		echo "<table>";
+		echo "<table align=center style=margin: 0px auto>";
+		echo "<tr align=center><th>SW Visualization</th></tr>";
+
 		for ($row = 1; $row <= $lastRow; $row++) {
 			 echo "<tr><td>";
 			 echo $worksheet->getCell('A'.$row)->getValue();
 			 echo "</td><td>";
 			 echo $worksheet->getCell('B'.$row)->getValue();
+			 echo "</td><td>";
+			 echo $worksheet->getCell('C'.$row)->getValue();
+			 echo "</td><td>";
+			 echo $worksheet->getCell('D'.$row)->getValue();
+			 echo "</td><td>";
+			 echo $worksheet->getCell('E'.$row)->getValue();
 			 echo "</td><tr>";
+
 		}
+
 		echo "</table>";	
 ?>
 
